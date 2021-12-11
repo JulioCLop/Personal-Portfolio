@@ -3,8 +3,8 @@ import React from "react";
 
 // Material UI
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 
 const useStyles = makeStyles((theme) => ({
