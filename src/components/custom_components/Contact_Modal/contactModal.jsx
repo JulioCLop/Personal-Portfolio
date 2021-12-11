@@ -24,6 +24,10 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MessageIcon from "@material-ui/icons/Message";
 
+import CustomButton from "../Button/button.component";
+
+
+
 const useStyles = makeStyles((theme) => ({
    mainModelContainer: {
       position: "absolute",
@@ -79,50 +83,36 @@ const useStyles = makeStyles((theme) => ({
    },
    contactButton: {
       color: 'black',
+      letterSpacing: '2px',
       backgroundColor: 'gray',
-      padding: '1rem 3rem !important',
-      boxShadow: '1px 1px 3px 1px rgba(0,0,0,0.5)',
+      width: '12.5rem',
+      boxShadow: '2px 1px 3px 1px rgba(0,0,0,0.5)',
+      padding: '1rem 2rem',
       position: "relative",
-      fontFamily: "inherit !important",
-      fontSize: "1rem !important",
+      margin: "0.9375rem",
       zIndex: "2",
-      "&::before": {
-         content: '""',
-         zIndex: "4",
-         position: "absolute",
-         width: "80px",
-         height: "2px",
-         bottom: "30px",
-         left: "45px",
-         backgroundColor: "#fff",
-         visibility: "hidden",
-         transition: "all 0.3s ease-in-out",
-         transform: "scaleX(0)",
-      },
       "&:hover:before": {
          visibility: "visible",
          transform: "scaleX(1)",
       },
       "&:active": {
          background: "none",
-         boxShadow: "none",
+         boxShadow: '2px 1px 3px 1px rgba(0,0,0,0.1)',
       },
       "&:focus": {
-         outline: "none !important",
+         outline: "none",
          border: "none",
       },
       "&:hover": {
-         background: "none !important",
-         color: "white !important",
+         background: "none",
+         color: theme.palette.common.white,
       },
+      "&:hover $messageIcon": {
+         color: "white"
+      }
    },
    messageIcon: {
-      color: `${theme.palette.common.white}`,
-      marginTop: "10px",
-      margin: '5px',
-      "&:hover": {
-         color: "white",
-      },
+      color: 'black',
    },
    icons: {
       fontSize: "37px !important",
@@ -231,7 +221,11 @@ export default function ContactModal() {
    return (
       <div>
          {matchesXS && matchesSM ? (
-            <MessageIcon onClick={handleOpen} className={classes.messageIcon} />
+           <Button className={classes.contactButton}>
+           <MessageIcon onClick={handleOpen} className={classes.messageIcon} />
+           </Button>
+
+          
          ) : (
             <Button
                color="primary"

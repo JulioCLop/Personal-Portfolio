@@ -339,7 +339,7 @@ function HomePage() {
                <Box className={classes.MainHeaderSectionBox1}>
                   <div className={classes.logo}></div>
                   <Typography variant="h5" className={classes.mainHeaderText}>
-                     Front-end Developer
+                     React Developer
                   </Typography>
                </Box>
             </Grid>
