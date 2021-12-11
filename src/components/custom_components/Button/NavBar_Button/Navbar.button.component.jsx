@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
         leterSpacing: '3px',
         color: "black",
         position: "relative",
-        margin: "15px",
         background: "none",
         boxShadow: "none",
         fontSize: "1rem",
@@ -34,9 +33,6 @@ const useStyles = makeStyles((theme) => ({
            visibility: "hidden",
            transition: "all 0.4s ease-in-out",
             transform: "scaleX(0)",
-           
-
-           
         },
         "&:hover:before": {
            visibility: "visible",

@@ -52,12 +52,6 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
       padding: "0 25px 0 25px",
    },
-   navGridItems2: {
-      display: "flex",
-      alignItems: "center",
-
-      justifyContent: "space-around",
-   },
    logoImage: {
       height: "100%",
       width: "100%",
@@ -147,7 +141,8 @@ const useStyles = makeStyles((theme) => ({
       height: "35px",
       borderRadius: "35px",
       filter: "grayscale(10%)",
-      backgroundColor: theme.palette.common.white,
+      color: 'white',
+      backgroundColor: "white",
       "&:hover": {
          boxShadow: "0px 1px 1.3px 0.5px #696464",
       },
@@ -163,6 +158,7 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    drawerIconContainer: {
+      color: 'white',
       marginLeft: "auto",
       marginRight: "2rem",
       "&:hover": {
@@ -209,8 +205,8 @@ const useStyles = makeStyles((theme) => ({
          margin: "0 auto",
       },
    },
-   contactLinkItem: {
-      margin: '0 65px 0 0'
+   LinkItem: {
+   
    }
 }));
 
@@ -260,36 +256,25 @@ function NavBar(props) {
                {/* main inner container for buttons*/}
                <Grid
                   container
-                  className={classes.navGridItemsContainer}
-                  justify="space-around"
-                  alignItems="baseline">
-                  <Grid item sm className={classes.aboutLinkItem}>
-                     <Box>
+                  className={classes.navGridItemsContainer}>
+                  <Grid item  container justifyContent='space-evenly' alignItems='flex-end' >
+                     <Box className={classes.LinkItem}>
                         <NavbarCustomButton toPath="/about">
                            About
                         </NavbarCustomButton>
                      </Box>
-                  </Grid>
-                  {/* this is the explore button*/}
-                  <Grid
-                     id="explore"
-                     item
-                     sm
-                     className={classes.exploreLinkItem}>
-                     <Box>
+                     <Box className={classes.LinkItem}>
                      <NavbarCustomButton toPath="/projects">
                     project
                   </NavbarCustomButton>
                      </Box>
-                  </Grid>
-                  {/* this is the contact modal button*/}
-                  <Grid item sm={3} className={classes.contactLinkItem}>
-                     <Box>
+                     <Box className={classes.LinkItem}>
                      <NavbarCustomButton toPath='#'>
                           contact
                         </NavbarCustomButton>
                      </Box>
                   </Grid>
+                  {/* this is the explore button*/}
                </Grid>
             </Grid>
          </Grid>
@@ -366,7 +351,7 @@ function NavBar(props) {
             className={classes.drawerIconContainer}
             onClick={() => setOpenDrawer(!openDrawer)}
             disableRipple>
-            <MenuIcon color="primary" className={classes.menuIcon} />
+            <MenuIcon  className={classes.menuIcon} />
          </IconButton>
       </React.Fragment>
    );

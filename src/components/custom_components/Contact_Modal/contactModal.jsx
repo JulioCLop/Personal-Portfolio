@@ -221,8 +221,8 @@ export default function ContactModal() {
    return (
       <div>
          {matchesXS && matchesSM ? (
-           <Button className={classes.contactButton}>
-           <MessageIcon onClick={handleOpen} className={classes.messageIcon} />
+           <Button  disableTouchRipple={true} onClick={handleOpen} className={classes.contactButton}>
+           <MessageIcon  className={classes.messageIcon} />
            </Button>
 
           
