@@ -13,10 +13,11 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
 
-    customButton: {
+   customButton: {
         color: 'black',
         letterSpacing: '2px',
-        backgroundColor: 'gray',
+      backgroundColor: 'gray',
+        fontFamily: "inherit",
         width: '12.5rem',
         boxShadow: '2px 1px 3px 1px rgba(0,0,0,0.5)',
         padding: '1rem 2rem',
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         zIndex: "2",
         "&::before": {
            content: '""',
+           margin: '0 auto',
            zIndex: "4",
            position: "absolute",
            width: "6rem",
@@ -72,7 +74,7 @@ const CustomButton = (props) => {
              to={toPath}
         >
         {props.children}
-    </Button>
+         </Button>
         </>
     )
 };

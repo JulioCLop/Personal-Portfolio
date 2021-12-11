@@ -14,12 +14,13 @@ import Typography from "@material-ui/core/Typography";
 
 // Component Imports
 import ContactModal from "../../components/custom_components/Contact_Modal/contactModal";
-import CustomButton from "../../components/custom_components/Button/button.component";
+import CustomButton from "../../components/custom_components/Button/Homepage_Button/button.component";
 
 
 const useStyles = makeStyles((theme) => ({
    ...theme.palette.common.typography,
    MainHeaderSection: {
+      marginTop: '30px',
       height: "200px",
    },
    mainContainer: {
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
       },
       [theme.breakpoints.down("sm")]: {
          padding: "15px",
+         marginLeft: "50px"
       },
       [theme.breakpoints.down("md")]: {},
       [theme.breakpoints.down("lg")]: {
@@ -87,14 +89,15 @@ const useStyles = makeStyles((theme) => ({
 
    mainHeaderText: {
       letterSpacing: "1.5px",
-      fontSize: theme.typography.fontFamily,
+      margin: '5px 0',
+      fontWeigth: '300px',
+      fontFamily: 'inherit',
       width: "400px",
       textTransform: "uppercase",
       zIndex: "3",
       [theme.breakpoints.down("sm")]: {
-         fontSize: "19px",
+         fontSize: "21px",
          width: "100%",
-         marginLeft: "5%",
       },
       [theme.breakpoints.down("xs")]: {
          fontSize: "19px",
@@ -168,6 +171,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundPosition: "center",
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
+      objectFit: 'cover',
       zIndex: "-4",
       height: "100%",
       width: "100%",
@@ -176,126 +180,14 @@ const useStyles = makeStyles((theme) => ({
       filter: "grayscale(80%) opacity(6%)",
    },
 
-   projectButton: {
-      color: 'black',
-      backgroundColor: 'gray',
-      boxShadow: '1px 1px 3px 1px rgba(0,0,0,0.5)',
-      padding: '1rem 2rem',
-      position: "relative",
-      margin: "15px",
-      zIndex: "2",
-      "&::before": {
-         content: '""',
-         zIndex: "4",
-         position: "absolute",
-         width: "90px",
-         height: "2px",
-         bottom: "28px",
-         left: "30px",
-         backgroundColor: "#fff",
-         visibility: "hidden",
-         transition: "all 0.3s ease-in-out",
-         transform: "scaleX(0)",
-      },
-      "&:hover:before": {
-         visibility: "visible",
-         transform: "scaleX(1)",
-      },
-      "&:active": {
-         background: "none",
-         boxShadow: "none",
-      },
-      "&:focus": {
-         outline: "none",
-         border: "none",
-      },
-      "&:hover": {
-         background: "none",
-         color: theme.palette.common.white,
-      },
-   },
-   AboutButton: {
-      color: 'black',
-      backgroundColor: 'gray',
-      boxShadow: '1px 1px 3px 1px rgba(0,0,0,0.5)',
-      padding: '1rem 2rem',
-      position: "relative",
-      zIndex: "2",
-      "&::before": {
-         content: '""',
-         zIndex: "4",
-         position: "absolute",
-         width: "96px",
-         height: "2px",
-         fontWeight: "700px",
-         bottom: "28px",
-         left: "30px",
-         backgroundColor: "#fff",
-         visibility: "hidden",
-         transition: "all 0.3s ease-in-out",
-         transform: "scaleX(0)",
-      },
-      "&:hover:before": {
-         visibility: "visible",
-         transform: "scaleX(1)",
-      },
-      "&:active": {
-         background: "none",
-         boxShadow: "none",
-      },
-      "&:focus": {
-         outline: "none",
-         border: "none",
-      },
-      "&:hover": {
-         background: "none",
-         color: theme.palette.common.white,
-      },
-   },
-   explorerButton: {
-      color: 'black',
-      backgroundColor: 'gray',
-      boxShadow: '1px 1px 3px 1px rgba(0,0,0,0.5)',
-      padding: '1rem 2rem',
-      position: "relative",
-      margin: "15px",
-      zIndex: "2",
-      "&::before": {
-         content: '""',
-         zIndex: "4",
-         position: "absolute",
-         width: "90px",
-         height: "2px",
-         bottom: "28px",
-         left: "30px",
-         backgroundColor: "#fff",
-         visibility: "hidden",
-         transition: "all 0.3s ease-in-out",
-         transform: "scaleX(0)",
-      },
-      "&:hover:before": {
-         visibility: "visible",
-         transform: "scaleX(1)",
-      },
-      "&:active": {
-         background: "none",
-         boxShadow: "none",
-      },
-      "&:focus": {
-         outline: "none",
-         border: "none",
-      },
-      "&:hover": {
-         background: "none",
-         color: theme.palette.common.white,
-      },
-   },
+   
 }));
 
 function HomePage() {
    const theme = useTheme();
    const classes = useStyles();
    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
 
    const contactButton = <ContactModal />;
 
@@ -338,6 +230,9 @@ function HomePage() {
                className={classes.MainHeaderSectionItems1}>
                <Box className={classes.MainHeaderSectionBox1}>
                   <div className={classes.logo}></div>
+                  <Typography variant="h6" className={classes.mainHeaderText}>
+                     Julio Lopez
+                  </Typography>
                   <Typography variant="h5" className={classes.mainHeaderText}>
                      React Developer
                   </Typography>
@@ -359,9 +254,9 @@ function HomePage() {
          <Grid
             sx={{ height: "70%" }}
             container
-            direction={matchesXS ? "column" : "flex"}
+            direction={ matchesSM ? "column" : "flex"}
             alignItems="center"
-            justify={matchesXS ? "flex-start" : "center"}>
+            justify={matchesXS   ? "flex-start" : "center"}>
             {matchesXS ? (
                secondaryXsNav
             ) : (

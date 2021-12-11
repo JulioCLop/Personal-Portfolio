@@ -28,6 +28,7 @@ import newLogo from "../../assets/newLogo.png";
 
 //  Component Import 
 import TransitionsModal from "../custom_components/Contact_Modal/contactModal";
+import NavbarCustomButton from "../custom_components/Button/NavBar_Button/Navbar.button.component";
 
 
 
@@ -69,85 +70,10 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
       margin: "0 10px 3px 0",
    },
-   aboutButton: {
-      height: "50px",
-      width: "50px",
-      color: "white",
-      position: "relative",
-      margin: "15px",
-      background: "none",
-      boxShadow: "none",
-      zIndex: "2",
-      "&::before": {
-         content: '""',
-         zIndex: "4",
-         position: "absolute",
-         width: "100px",
-         height: "2px",
-         bottom: "24px",
-         left: "-15px",
-         backgroundColor: "#fff",
-         visibility: "hidden",
-         transition: "all 0.3s ease-in-out",
-         transform: "scaleX(0)",
-      },
-      "&:hover:before": {
-         visibility: "visible",
-         transform: "scaleX(1)",
-      },
-      "&:active": {
-         background: "none",
-         boxShadow: "none",
-      },
-      "&:focus": {
-         outline: "none",
-         border: "none",
-      },
-      "&:hover": {
-         color: theme.palette.common.white,
-      },
-   },
    exploreBoxImage: {
       position: "absolute",
    },
-   projectsButton: {
-      height: "50px",
-      width: "50px",
-      color: "white",
-      position: "relative",
-      margin: "15px",
-      background: "none",
-      boxShadow: "none",
-      zIndex: "2",
-      "&::before": {
-         content: '""',
-         zIndex: "4",
-         position: "absolute",
-         width: "100px",
-         height: "2px",
-         bottom: "24px",
-         left: "-15px",
-         backgroundColor: "#fff",
-         visibility: "hidden",
-         transition: "all 0.3s ease-in-out",
-         transform: "scaleX(0)",
-      },
-      "&:hover:before": {
-         visibility: "visible",
-         transform: "scaleX(1)",
-      },
-      "&:active": {
-         background: "none",
-         boxShadow: "none",
-      },
-      "&:focus": {
-         outline: "none",
-         border: "none",
-      },
-      "&:hover": {
-         color: theme.palette.common.white,
-      },
-   },
+  
    returnButton: {
       color: "white",
       position: "relative",
@@ -158,10 +84,10 @@ const useStyles = makeStyles((theme) => ({
          content: '""',
          zIndex: "4",
          position: "absolute",
-         width: "137px",
-         height: "2px",
-         bottom: "20px",
-         left: "42px",
+         width: "117px",
+         height: "1px",
+         bottom: "23px",
+         left: "48px",
          backgroundColor: "#fff",
          visibility: "hidden",
          transition: "all 0.3s ease-in-out",
@@ -183,8 +109,6 @@ const useStyles = makeStyles((theme) => ({
          color: theme.palette.common.white,
       },
    },
-  
-
    toolbarMargin: {
       ...theme.mixins.toolbar,
       marginBottom: "2.0rem",
@@ -285,6 +209,9 @@ const useStyles = makeStyles((theme) => ({
          margin: "0 auto",
       },
    },
+   contactLinkItem: {
+      margin: '0 65px 0 0'
+   }
 }));
 
 function NavBar(props) {
@@ -294,6 +221,8 @@ function NavBar(props) {
 
    const [openDrawer, setOpenDrawer] = useState(false);
    const [rotate, setRotate] = useState(false);
+
+
    const MainNav = (
       <React.Fragment>
          {/* This is the main navbar */}
@@ -334,37 +263,31 @@ function NavBar(props) {
                   className={classes.navGridItemsContainer}
                   justify="space-around"
                   alignItems="baseline">
-                  <Grid item sm={3} className={classes.aboutLinkItem}>
+                  <Grid item sm className={classes.aboutLinkItem}>
                      <Box>
-                        <Button
-                           disableTouchRipple={true}
-                           component={Link}
-                           to="/about"
-                           className={classes.aboutButton}>
+                        <NavbarCustomButton toPath="/about">
                            About
-                        </Button>
+                        </NavbarCustomButton>
                      </Box>
                   </Grid>
                   {/* this is the explore button*/}
                   <Grid
                      id="explore"
                      item
-                     sm={3}
+                     sm
                      className={classes.exploreLinkItem}>
                      <Box>
-                        <Button
-                           disableTouchRipple={true}
-                           component={Link}
-                           to="/projects"
-                           className={classes.projectsButton}>
-                           Projects
-                        </Button>
+                     <NavbarCustomButton toPath="/projects">
+                    project
+                  </NavbarCustomButton>
                      </Box>
                   </Grid>
                   {/* this is the contact modal button*/}
                   <Grid item sm={3} className={classes.contactLinkItem}>
                      <Box>
-                        <TransitionsModal />
+                     <NavbarCustomButton toPath='#'>
+                          contact
+                        </NavbarCustomButton>
                      </Box>
                   </Grid>
                </Grid>
@@ -458,7 +381,6 @@ function NavBar(props) {
                {matches ? drawer : MainNav}
             </Toolbar>
          </AppBar>
-
          <div className={classes.toolbarMargin} />
       </React.Fragment>
    );

@@ -24,7 +24,7 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MessageIcon from "@material-ui/icons/Message";
 
-import CustomButton from "../Button/button.component";
+import CustomButton from "../Button/Homepage_Button/button.component";
 
 
 
