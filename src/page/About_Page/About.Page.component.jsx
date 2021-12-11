@@ -12,22 +12,22 @@ import 'aos/dist/aos.css';
 
 // Material UI
 import { makeStyles,useTheme } from "@material-ui/core/styles";
-import ListSubheader from "@mui/material/ListSubheader";
-import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Collapse from "@mui/material/Collapse";
-import ExpandLess from "@mui/icons-material/ExpandLess";
-import ExpandMore from "@mui/icons-material/ExpandMore";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import FiberManualRecordRoundedIcon from "@mui/icons-material/FiberManualRecordRounded";
-import Button from "@mui/material/Button";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import List from "@material-ui/core/List";
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import Collapse from "@material-ui/core/Collapse";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import FiberManualRecordRoundedIcon from "@material-ui/icons/FiberManualRecordRounded";
+import Button from "@material-ui/core/Button";
 import GetAppIcon from '@material-ui/icons/GetApp';
-import Divider from "@mui/material/Divider";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import Divider from "@material-ui/core/Divider";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import CloseIcon from '@material-ui/icons/Close';
 
 // Component Import 
@@ -413,16 +413,16 @@ function AboutPage() {
                            Top Personal Skills:
                         </ListSubheader>
                      }>
-                     <ListItemButton onClick={handleClick}>
+                     <ListItem button onClick={handleClick}>
                         <ListItemIcon>
                            <img src={Logo} width="60" alt='logo' />
                         </ListItemIcon>
                         <ListItemText primary="Ambitious" />
                         {open1 ? <ExpandLess /> : <ExpandMore />}
-                     </ListItemButton>
+                     </ListItem>
                      <Collapse in={!open1} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                           <ListItemButton
+                           <ListItem button
                               sx={{
                                  pl: 4,
                               }}>
@@ -433,8 +433,8 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Communication" />
-                           </ListItemButton>
-                           <ListItemButton
+                           </ListItem>
+                           <ListItem button
                               sx={{
                                  pl: 4,
                               }}>
@@ -445,7 +445,7 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Team player" />
-                           </ListItemButton>
+                           </ListItem>
                         </List>
                      </Collapse>
                   </List>
@@ -467,16 +467,16 @@ function AboutPage() {
                            I Can Help You With:
                         </ListSubheader>
                      }>
-                     <ListItemButton onClick={handleClick2}>
+                     <ListItem button onClick={handleClick2}>
                         <ListItemIcon>
                            <img src={Logo} width="60" alt='logo' />
                         </ListItemIcon>
                         <ListItemText primary="Bilingual: Spanish/English" />
                         {open2 ? <ExpandLess /> : <ExpandMore />}
-                     </ListItemButton>
+                     </ListItem>
                      <Collapse in={!open2} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -484,8 +484,8 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Co-developing the front-end" />
-                           </ListItemButton>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           </ListItem>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -493,8 +493,8 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Estimating tasks" />
-                           </ListItemButton>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           </ListItem>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -502,7 +502,7 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Researching possible techs" />
-                           </ListItemButton>
+                           </ListItem>
                         </List>
                      </Collapse>
                   </List>
@@ -550,16 +550,16 @@ function AboutPage() {
                            Top Personal Skills:
                         </ListSubheader>
                      }>
-                     <ListItemButton onClick={handleClick}>
+                     <ListItem button onClick={handleClick}>
                         <ListItemIcon>
                            <img src={Logo} width="60" alt='logo' />
                         </ListItemIcon>
                         <ListItemText primary="Ambitious" />
                         {open1 ? <ExpandLess /> : <ExpandMore />}
-                     </ListItemButton>
+                     </ListItem>
                      <Collapse in={!open1} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           <ListItem buttton sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -567,8 +567,8 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Communication" />
-                           </ListItemButton>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           </ListItem>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -576,7 +576,7 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Team player" />
-                           </ListItemButton>
+                           </ListItem>
                         </List>
                      </Collapse>
                   </List>
@@ -599,16 +599,16 @@ function AboutPage() {
                            I Can Help You With:
                         </ListSubheader>
                      }>
-                     <ListItemButton onClick={handleClick2}>
+                     <ListItem button onClick={handleClick2}>
                         <ListItemIcon>
                            <img src={Logo} width="60" alt='logo' />
                         </ListItemIcon>
                         <ListItemText primary="Bilingual: Spanish/English" />
                         {open2 ? <ExpandLess /> : <ExpandMore />}
-                     </ListItemButton>
+                     </ListItem>
                      <Collapse in={!open2} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -616,8 +616,8 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Co-developing the front-end" />
-                           </ListItemButton>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           </ListItem>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -625,8 +625,8 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Estimating tasks" />
-                           </ListItemButton>
-                           <ListItemButton sx={{ pl: 4 }}>
+                           </ListItem>
+                           <ListItem button sx={{ pl: 4 }}>
                               <ListItemIcon>
                                  <FiberManualRecordRoundedIcon
                                     fontSize="extrasmall"
@@ -634,7 +634,7 @@ function AboutPage() {
                                  />
                               </ListItemIcon>
                               <ListItemText primary="Researching possible techs" />
-                           </ListItemButton>
+                           </ListItem>
                         </List>
                      </Collapse>
                   </List>

@@ -13,7 +13,7 @@ import MenuIcon from "@material-ui/core/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@mui/material/ListItemText";
+import ListItemText from "@material-ui/core/ListItemText";
 import Box from "@material-ui/core/Box";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import Grid from "@material-ui/core/Grid";

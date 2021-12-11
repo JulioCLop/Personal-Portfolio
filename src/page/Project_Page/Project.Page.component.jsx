@@ -16,13 +16,13 @@ import projectImage from "../../assets/projectImage.jpg";
 
 // Material UI imports
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Divider from "@material-ui/core/Divider";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
 
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-
+// Amination
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

@@ -6,23 +6,23 @@ import ImagePhone from '../../../assets/contactImage1.jpg';
 
 // Material UI
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from '@material-ui/icons/Email';
 import SendIcon from "@mui/icons-material/Send";
-import Backdrop from "@mui/material/Backdrop";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Fade from "@mui/material/Fade";
+import Backdrop from "@material-ui/core/Backdrop";
+import Box from "@material-ui/core/Box";
+import Modal from "@material-ui/core/Modal";
+import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
-import Typography from "@mui/material/Typography";
+import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import TextField from "@mui/material/TextField";
-import MessageIcon from "@mui/icons-material/Message";
+import TextField from "@material-ui/core/TextField";
+import MessageIcon from "@material-ui/icons/Message";
 
 const useStyles = makeStyles((theme) => ({
    mainModelContainer: {

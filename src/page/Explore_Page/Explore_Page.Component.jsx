@@ -7,10 +7,10 @@ import Footer from '../../components/Footer/Main.Footer.Component'
 
 // material UI
 import { useTheme, makeStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
 
 
 
