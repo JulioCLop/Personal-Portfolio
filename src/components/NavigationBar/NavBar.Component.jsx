@@ -41,6 +41,7 @@ import { ThemeContext } from "../../contexts/Theme.Contexts";
 
 
 
+
 const useStyles = makeStyles((theme) => ({
    mainNavContainer: {
       backgroundColor: "black",
@@ -346,20 +347,20 @@ function NavBar(props) {
                      Project
                   </ListItemText>
                </ListItem>
-
                <ListItem
                   onClick={() => setOpenDrawer(false)}
                   divider
                   button
-                  component={Link}
-                  to="/projects">
+               >
+                  <Box style={{width: '100%'}} onClick={() => setOpen(true)}>
                   <ListItemText
                      className={classes.listItemTextBtn}
+                   
                      disableTypography>
-                     <Button onclick={()=> setOpen(true)} >
-                        Contact
-                     </Button>
+                     Contact
                   </ListItemText>
+                  </Box>
+                 
                </ListItem>
             </List>
          </Drawer>
