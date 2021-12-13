@@ -9,7 +9,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Drawer from "@material-ui/core/Drawer";
-import MenuIcon from "@material-ui/core/Menu";
+import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -363,6 +363,11 @@ function NavBar(props) {
                </ListItem>
             </List>
          </Drawer>
+         <Grid container alignItems='center' justifyContent='center'>
+         <Box style={{display: 'flex',alignItems:'center',justifyContent: 'center'}} component="div">
+            <img src={newLogo} width="130" alt="logo" />
+         </Box>
+         </Grid>
          <IconButton
             focusable="false"
             color='primary'
