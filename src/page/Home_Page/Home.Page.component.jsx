@@ -13,7 +13,6 @@ import Typography from "@material-ui/core/Typography";
 
 
 // Component Imports
-import ContactModal from "../../components/custom_components/Contact_Modal/contactModal";
 import CustomButton from "../../components/custom_components/Button/Homepage_Button/button.component";
 
 
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
    MainHeaderSectionItems1: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "flex-start",
+      justifyContent: "center",
       width: "350px",
       height: "200px",
    },
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
       },
       [theme.breakpoints.down("sm")]: {
          padding: "15px",
-         marginLeft: "50px"
+         marginLeft: "10px"
       },
       [theme.breakpoints.down("md")]: {},
       [theme.breakpoints.down("lg")]: {
@@ -102,7 +101,6 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down("xs")]: {
          fontSize: "19px",
          width: "100%",
-         marginLeft: "5%",
       },
    },
    buttonBox: {
@@ -188,8 +186,9 @@ function HomePage() {
    const classes = useStyles();
    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
 
-   const contactButton = <ContactModal />;
+  
 
    const secondaryXsNav = (
       <React.Fragment>
@@ -211,7 +210,6 @@ function HomePage() {
                ABOUT ME
             </CustomButton>
          </Grid>
-         <Grid item>{contactButton}</Grid>
       </React.Fragment>
    );
 
@@ -221,12 +219,12 @@ function HomePage() {
          <Grid
             sx={{ height: "50%" }}
             container
+            justifyContent={matchesMD ? 'center' : ''}
+            alignItems={matchesMD ? 'center' : ''}
             className={classes.MainHeaderSection}>
             <Grid
                item
-               xs={12}
-               sm={6}
-               md={6}
+               
                className={classes.MainHeaderSectionItems1}>
                <Box className={classes.MainHeaderSectionBox1}>
                   <div className={classes.logo}></div>
@@ -236,17 +234,6 @@ function HomePage() {
                   <Typography variant="h5" className={classes.mainHeaderText}>
                      React Developer
                   </Typography>
-               </Box>
-            </Grid>
-            
-            <Grid
-               item
-               xs={12}
-               sm={6}
-               md={6}
-               className={classes.MainHeaderSectionItems2}>
-               <Box className={classes.contactButton}>
-                  {matchesXS ? "" : contactButton}
                </Box>
             </Grid>
          </Grid>

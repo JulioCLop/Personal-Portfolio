@@ -11,11 +11,10 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     navbarButton: {
-        backgroundColor: 'gray',
         fontFamily: "inherit",
         TextTransform: "uppercase",
-        leterSpacing: '3px',
-        color: "black",
+        color: 'white',
+        leterSpacing: '0.1875rem',
         position: "relative",
         background: "none",
         boxShadow: "none",
@@ -25,13 +24,13 @@ const useStyles = makeStyles((theme) => ({
            content: '""',
            zIndex: "4",
            position: "absolute",
-           width: "83px",
-           height: "1px",
-           bottom: "21px",
-           left: "5px",
+           width: "5.1875rem",
+           height: "0.0625rem",
+           bottom: "1.3125rem",
+           left: "0.3125rem",
            backgroundColor: "#fff",
            visibility: "hidden",
-           transition: "all 0.4s ease-in-out",
+           transition: "all 0.6s ease-in-out",
             transform: "scaleX(0)",
         },
         "&:hover:before": {
@@ -48,7 +47,8 @@ const useStyles = makeStyles((theme) => ({
         },
         "&:hover": {
             color: theme.palette.common.white,
-            transition: "all 1s"
+            transition: 'all 1.1s ease-in-out',
+            backgroundColor: 'rgb(93, 93, 93)'
         },
      },
 
@@ -59,15 +59,17 @@ const useStyles = makeStyles((theme) => ({
 const NavbarCustomButton = (props) => {
 
     const classes = useStyles();
-    const { toPath } = props;
+    const { toPath,id } = props;
+   
 
     return (
         <>
         <Button
-        disableTouchRipple={true}
-        component={Link}
-        to={toPath}
-        className={classes.navbarButton}>
+           disableTouchRipple={true}
+            component={Link}
+            id={id}
+           to={toPath}
+           className={classes.navbarButton}>
              {props.children}
        </Button> 
         </>

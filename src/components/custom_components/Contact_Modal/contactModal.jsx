@@ -24,7 +24,7 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import MessageIcon from "@material-ui/icons/Message";
 
-import CustomButton from "../Button/Homepage_Button/button.component";
+
 
 
 
@@ -110,6 +110,48 @@ const useStyles = makeStyles((theme) => ({
       "&:hover $messageIcon": {
          color: "white"
       }
+   },
+   modalButton: {
+      fontFamily: "inherit",
+      TextTransform: "uppercase",
+      color: 'white',
+      leterSpacing: '0.1875rem',
+      position: "relative",
+      background: "none",
+      boxShadow: "none",
+      fontSize: "1rem",
+      zIndex: "2",
+      "&::before": {
+         content: '""',
+         zIndex: "4",
+         position: "absolute",
+         width: "5.1875rem",
+         height: "0.0625rem",
+         bottom: "1.3125rem",
+         left: "0.3125rem",
+         backgroundColor: "#fff",
+         visibility: "hidden",
+         transition: "all 0.6s ease-in-out",
+          transform: "scaleX(0)",
+      },
+      "&:hover:before": {
+         visibility: "visible",
+         transform: "scaleX(1)",
+      },
+      "&:active": {
+         background: "none",
+         boxShadow: "none",
+      },
+      "&:focus": {
+         outline: "none",
+         border: "none",
+      },
+      "&:hover": {
+         color: theme.palette.common.white,
+         backgroundColor: 'rgb(93, 93, 93)',
+         transition: 'all 1.1s ease-in-out'
+          
+      },
    },
    messageIcon: {
       color: 'black',
@@ -231,7 +273,7 @@ export default function ContactModal() {
                color="primary"
                disableTouchRipple={true}
                onClick={handleOpen}
-               className={classes.contactButton}>
+               className={classes.modalButton}>
                Contact
             </Button>
          )}

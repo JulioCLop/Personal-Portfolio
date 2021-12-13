@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 // React Router
 import { Link } from "react-router-dom";
@@ -31,6 +31,10 @@ import TransitionsModal from "../custom_components/Contact_Modal/contactModal";
 import NavbarCustomButton from "../custom_components/Button/NavBar_Button/Navbar.button.component";
 
 
+// Context API
+import { ThemeContext } from "../../contexts/Theme.Contexts";
+
+
 
 
 
@@ -50,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      padding: "0 25px 0 25px",
+      padding: "0 1.5625rem 0 1.5625rem",
    },
    logoImage: {
       height: "100%",
@@ -60,9 +64,9 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
    },
    IconArrow: {
-      fontSize: "32px",
+      fontSize: "2rem",
       color: "white",
-      margin: "0 10px 3px 0",
+      margin: "0 0.625rem 0.1875rem 0",
    },
    exploreBoxImage: {
       position: "absolute",
@@ -78,10 +82,10 @@ const useStyles = makeStyles((theme) => ({
          content: '""',
          zIndex: "4",
          position: "absolute",
-         width: "117px",
-         height: "1px",
-         bottom: "23px",
-         left: "48px",
+         width: "7.3125rem",
+         height: "0.0625rem",
+         bottom: "1.5rem",
+         left: "3rem",
          backgroundColor: "#fff",
          visibility: "hidden",
          transition: "all 0.3s ease-in-out",
@@ -114,21 +118,21 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    mainHead: {
-      height: "130px",
+      height: "8.125rem",
    },
    buttonContainer: {
       width: "100%",
       display: "flex",
       justifyContent: "flex-end",
-      margin: "0 40px",
+      margin: "0 2.5rem",
    },
    button: {
       ...theme.typography.button,
       minWidth: 12,
-      marginLeft: "25px",
+      marginLeft: "2.5rem",
       borderRadius: 0,
-      borderLeft: "1px solid white",
-      borderBottom: "2px solid white",
+      borderLeft: "0.0625rem solid white",
+      borderBottom: "1.25rem solid white",
       "&:hover": {
          color: `${theme.palette.common.black} !important`,
          backgroundColor: "transparent",
@@ -137,9 +141,9 @@ const useStyles = makeStyles((theme) => ({
    
    imgIcon: {
       ...theme.mainShadow,
-      width: "35px",
-      height: "35px",
-      borderRadius: "35px",
+      width: "2.1875rem",
+      height: "2.1875rem",
+      borderRadius: "2.1875rem",
       filter: "grayscale(10%)",
       color: 'white',
       backgroundColor: "white",
@@ -151,10 +155,10 @@ const useStyles = makeStyles((theme) => ({
          boxShadow: "none",
       },
       [theme.breakpoints.down("lg")]: {
-         marginLeft: "17px",
+         marginLeft: "1.0625rem",
       },
       [theme.breakpoints.down("xl")]: {
-         marginLeft: "10px",
+         marginLeft: "0.625rem",
       },
    },
    drawerIconContainer: {
@@ -169,23 +173,23 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    menuIcon: {
-      height: "40px",
-      width: "40px",
+      height: "2.5rem",
+      width: "2.5rem",
    },
    drawer: {
       backgroundColor: "#e1e1e1 ",
-      padding: "0 20px 20px 15px",
-      margin: "0 36px 0 36px",
-      borderRadius: "0 0 8px 8px",
+      padding: "0 1.25rem 1.25rem 0.9375rem",
+      margin: "0 2.25rem 0 2.25rem",
+      borderRadius: "0 0 0.5rem 0.5rem",
       [theme.breakpoints.down("sm")]: {
-         margin: "0 175px 0 175px",
+         margin: "0 10.9375rem 0 10.9375rem",
       },
       [theme.breakpoints.down("xs")]: {
-         margin: "0",
+         margin: 0,
       },
    },
    listItemTextBtn: {
-      fontSize: "17.5px",
+      fontSize: "1.09375rem",
       textTransform: "upperCase",
       background: "transparent !important",
       textAlign: "center",
@@ -197,20 +201,38 @@ const useStyles = makeStyles((theme) => ({
    },
    h6: {
       color: theme.palette.common.white,
-      margin: "20px",
-      width: "100px",
-      fontSize: "13.5px",
+      margin: "1.25rem",
+      width: "6.25rem",
+      fontSize: "0.84375rem",
       [theme.breakpoints.down("sm")]: {
-         marginTop: "20px",
+         marginTop: "1.25rem",
          margin: "0 auto",
       },
    },
-   LinkItem: {
-   
+   navGridItemsContainer: {
+      "& #linethrough": {
+         "&::before": {
+            width: "65px",
+          
+         }
+      },
+      "& #linethrough2": {
+         "&::before": {
+            width: "77px",
+          
+         }
+      }
+     
    }
+
 }));
 
 function NavBar(props) {
+
+   const { open, setOpen } = useContext(ThemeContext);
+
+   console.log(open)
+
    const classes = useStyles();
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("sm"));
@@ -257,23 +279,16 @@ function NavBar(props) {
                <Grid
                   container
                   className={classes.navGridItemsContainer}>
-                  <Grid item  container justifyContent='space-evenly' alignItems='flex-end' >
-                     <Box className={classes.LinkItem}>
-                        <NavbarCustomButton toPath="/about">
+                  <Grid item   container justifyContent='center' alignItems='center'  >
+                        <NavbarCustomButton id='linethrough'  toPath="/about">
                            About
                         </NavbarCustomButton>
-                     </Box>
-                     <Box className={classes.LinkItem}>
-                     <NavbarCustomButton toPath="/projects">
+                     <NavbarCustomButton id='linethrough2' toPath="/projects">
                     project
                   </NavbarCustomButton>
-                     </Box>
-                     <Box className={classes.LinkItem}>
-                     <NavbarCustomButton toPath='#'>
-                          contact
-                        </NavbarCustomButton>
-                     </Box>
+                     <TransitionsModal/>
                   </Grid>
+               
                   {/* this is the explore button*/}
                </Grid>
             </Grid>
@@ -341,13 +356,16 @@ function NavBar(props) {
                   <ListItemText
                      className={classes.listItemTextBtn}
                      disableTypography>
-                     <TransitionsModal />
+                     <Button onclick={()=> setOpen(true)} >
+                        Contact
+                     </Button>
                   </ListItemText>
                </ListItem>
             </List>
          </Drawer>
          <IconButton
             focusable="false"
+            color='primary'
             className={classes.drawerIconContainer}
             onClick={() => setOpenDrawer(!openDrawer)}
             disableRipple>

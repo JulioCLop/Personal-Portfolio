@@ -12,7 +12,7 @@ import TransitionsModal from './components/custom_components/Contact_Modal/conta
 import ExplorePageComponent from './page/Explore_Page/Explore_Page.Component';
 
 // Context API
-import { ThemeProviders } from '../src/contexts/Theme.Contexts';
+import { ModalProvider } from '../src/contexts/Theme.Contexts';
 
 // Material UI
 import { ThemeProvider } from "@mui/material/styles";
@@ -36,7 +36,7 @@ function App(){
   
   
   return (
-    <ThemeProviders>
+    <ModalProvider>
       <ThemeProvider theme={theme}>
     <React.Fragment>
     
@@ -71,7 +71,7 @@ function App(){
      
       </React.Fragment>
       </ThemeProvider>
-      </ThemeProviders>
+      </ModalProvider>
     )
   
 }
