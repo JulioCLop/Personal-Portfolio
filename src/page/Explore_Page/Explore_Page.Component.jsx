@@ -5,7 +5,7 @@ import NavBar from "../../components/NavigationBar/NavBar.Component";
 import Footer from '../../components/Footer/Main.Footer.Component'
 
 
-// material UI
+// Material UI
 import { useTheme, makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Grid from "@material-ui/core/Grid";
@@ -19,35 +19,49 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
    uxContainer: {},
    uxResource: {
-      padding: " 7.5px 0 0 15px",
+      padding: " 0.46875rem 0 0 0.9375rem",
+      
       height: "100%",
       width: "100%",
    },
    links: {
       color: "white",
       textDecoration: "none",
+      backgroundColor: 'gray',
+      padding: "1rem",
+      borderRadius: "80px",
+      boxShadow: '0px 2px 2px rgba(0,0,0,0.8)',
+
+
       "&:hover ": {
-         textDecoration: "underline",
-         color: `${theme.palette.common.white}`,
+         textDecoration: "none",
+         boxShadow: '0px 1px 1px rgba(0,0,0,0.8)',
+         Transition: '1s all ease-in-out',
+        color: "#c9c9c9"
       },
    },
    images: {
       filter: "grayscale(60%)",
-      objectFit: 'cover'
-
-    
-
+      objectFit: 'cover',
+      boxShadow: '0px 2px 4px 2px rgba(0,0,0,0.8)'
    },
   titles: {
      textAlign: 'justify',
-     margin: '25px 0'
+     margin: '0.1rem 0 2.5rem 0',
+     color: '#c9c9c9'
    },
    dateHead: {
-     margin: '0'
+      color: "#c9c9c9",
+      margin: '0',
+     
    },
    mainExploreHeader: {
-      margin: '25px 0'
+      margin: '1.5625rem 0'
 
+   },
+   mainContainerContent: {
+      color: 'white',
+      marginBottom: "5rem"
    }
 }));
 
@@ -61,26 +75,25 @@ export default function ExplorePageComponent() {
          <NavBar />
          <Grid
             container
-            style={{
-               marginTop: "5em",
-            }}
             alignItems="center"
-            justify="center">
+            justify="center"
+         className={classes.mainContainerContent}>
             <Grid
             container
                style={{
-               margin: '50px'
+               margin: '4.6875rem 0'
             }}
                alignItems='center'
                justifyContent='center'>
             <Grid item>
-               <Typography className={classes.mainExploreHeader} variant='h1'> Explore These Great Article</Typography>
+               <Typography className={classes.mainExploreHeader} variant='h3'> Explore These Great Article</Typography>
             </Grid>
          </Grid>
             <Grid
                item
                alignItems="center"
                justify="center"
+               style={{marginBottom: '4rem'}}
                className={classes.uxContainer}
                container>
                <Grid item>
@@ -96,7 +109,8 @@ export default function ExplorePageComponent() {
                <Grid
                   item
                   style={{
-                     height: "400px",
+                     height: "25rem",
+                     margin: ' 0 1rem 0 2rem',
                      display: "column",
                      alignItems: "flex-start",
                      justifyContent: "flex-start",
@@ -138,7 +152,7 @@ export default function ExplorePageComponent() {
             </Grid>
             <Grid
                style={{
-                  marginTop: '30px'
+                  marginTop: '1.875rem'
                }}
                container
                item
@@ -169,7 +183,7 @@ export default function ExplorePageComponent() {
                <Grid
                   item
                   style={{
-                     height: "400px",
+                     height: "25rem",
                      display: "column",
                      alignItems: "flex-start",
                      justifyContent: "flex-start",
@@ -208,12 +222,6 @@ export default function ExplorePageComponent() {
                   </Grid>
                </Grid>
             </Grid>
-
-            {/*
-                    <Grid item container>
-                    <h1>hello</h1>
-                </Grid>
-                */}
          </Grid>
          <Footer/>
       </React.Fragment>

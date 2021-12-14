@@ -1,9 +1,10 @@
 import { createTheme } from '@mui/material/styles';
 
-
+const mainFontWhite = '#fafbf5';
+const secondaryFontWhite = '#d9d9d9';
 const mainBlack = "#000";
 const mainGray = "#dedee6ba";
-const mainBorderColor = "#e6e6e6"
+const lightGray = "#c9c9c9"
 
 
 
@@ -11,8 +12,9 @@ export default createTheme({
     palette: {
         common: {
             black: `${mainBlack}`,
-            white: `${mainGray}`,
-            lightGray: `${mainBorderColor}`,
+            white: `${mainFontWhite}`,
+            lightWhite: `${secondaryFontWhite}`,
+            lightGray: `${lightGray}`,
         },
         primary: {
             main: `${mainGray}`
