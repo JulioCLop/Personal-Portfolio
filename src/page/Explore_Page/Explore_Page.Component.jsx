@@ -46,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: '0px 2px 4px 2px rgba(0,0,0,0.8)'
    },
   titles: {
-     textAlign: 'justify',
      margin: '0.1rem 0 2.5rem 0',
      color: '#c9c9c9',
      textAlign:'center'
