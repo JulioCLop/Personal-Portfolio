@@ -48,7 +48,8 @@ const useStyles = makeStyles((theme) => ({
   titles: {
      textAlign: 'justify',
      margin: '0.1rem 0 2.5rem 0',
-     color: '#c9c9c9'
+     color: '#c9c9c9',
+     textAlign:'center'
    },
    dateHead: {
       color: "#c9c9c9",
@@ -56,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
      
    },
    mainExploreHeader: {
-      margin: '1.5625rem 0'
+      margin: '1.5625rem 0',
+      textAlign:'center'
 
    },
    mainContainerContent: {
@@ -69,6 +71,7 @@ export default function ExplorePageComponent() {
    const classes = useStyles();
    const theme = useTheme();
    const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+   const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
 
    return (
       <React.Fragment>
@@ -129,7 +132,8 @@ export default function ExplorePageComponent() {
                      </Grid>
                      <Grid>
                         <Box>
-                           <h3 className={classes.titles}>
+                           <h3
+                              className={classes.titles}>
                               10 fundamental UI design principles you need to
                               know
                            </h3>
@@ -163,7 +167,7 @@ export default function ExplorePageComponent() {
               >
                <Grid
                   style={{
-                     marginLeft: '3em'
+                     margin: matchesSM ?  '0 auto': '0 0 0 3rem',
                   }}
                   item>
                   <Grid

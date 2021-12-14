@@ -164,7 +164,6 @@ const useStyles = makeStyles((theme) => ({
    },
    drawerIconContainer: {
       color: 'white',
-      marginLeft: "auto",
       marginRight: "2rem",
       "&:hover": {
          backgroundColor: "transparent",
@@ -364,8 +363,9 @@ function NavBar(props) {
                </ListItem>
             </List>
          </Drawer>
-         <Grid container alignItems='center' justifyContent='center'>
-         <Box style={{display: 'flex',alignItems:'center',justifyContent: 'center'}} component="div">
+         <Grid
+            container alignItems='flex-start' justifyContent='flex-start'>
+         <Box style={{display: 'flex',alignItems:'center',justifyContent: 'center',marginLeft: '2rem'}} component="div">
             <img src={newLogo} width="130" alt="logo" />
          </Box>
          </Grid>
