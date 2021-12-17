@@ -40,46 +40,63 @@ import WorkHistoryComponent from "../../components/custom_components/Work_Histor
 
 const useStyles = makeStyles((theme) => ({
    mainAboutContainer: {
+    
+      color: '#c9c9c9',
       height: "100%",
       width: "100%",
-      background: "black",
-   },
-   mainBoxContentText: {
-      textAlign: 'justify'
    },
    quoteContainer: {
       width: "100%",
-      height: "400px",
+      height: "25rem",
       [theme.breakpoints.down("xs")]: {
-         height: "300px",
+        
       },
    },
+   IntroContainer: {
+      heigth: '28.125rem',
+      marginTop: '5rem'
+   },
    quoteItem: {
-      width: "50%",
+      backgroundColor: 'rgba(0, 0, 0, 0.501)',
+      boxShadow: '0px 2px 2px rgba(0,0,0,0.8)',
+      borderRadius: '6px',
+      width: '70%',
+      height: '15rem',
       [theme.breakpoints.down("xs")]: {
-         width: "100%",
+         width: "100%"
+
       },
    },
    quoteBox: {
+      display: 'flex',
+      alignItems: 'center',
       height: "100%",
       width: "100%",
+      padding: '2rem',
+      [theme.breakpoints.down("md")]: {
+        
+      },
       [theme.breakpoints.down("xs")]: {
-         display: "flex",
-         flexDirection: "column",
-         alignItems: "center",
-         justifyContent: "center",
+       
       },
    },
    quoteText: {
+      color: 'white',
+      fontWeigth: '700',
+      fontSize: '2rem',
       textAlign: "center",
+      [theme.breakpoints.down("md")]: {
+       
+      },
+      [theme.breakpoints.down("sm")]: {
+       fontSize: "1.5rem"
+      },
       [theme.breakpoints.down("xs")]: {
-         width: "400px",
+       
       },
    },
-   mainIntroContainer: {
-      height: "100%",
-      width: "100%",
-   },
+
+   
    itemIntro: {
       height: "300px",
       [theme.breakpoints.down("xs")]: {
@@ -87,54 +104,35 @@ const useStyles = makeStyles((theme) => ({
       },
    },
    boxIntro: {
-      backgroundImage: `url(${IntroImage})`,
-      background: "white",
-      margin: "0 auto",
-      height: "100%",
-      width: "350px",
-      padding: "30px",
-      backgroundPosition: "center",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "flex-end",
-      alignItems: "flex-end",
-      filter: "grayscale(3%) ",
+     
+      
+    
    },
-   introh3: {
-      color: "white",
-      margin: "10px",
-      width: "100%",
-
-      textAlign: "center",
+   BoxIntroImage: {
+      height: '23.4375rem',
+      width: '23.4375rem',
+      ojbjectFit: 'cover',
+      borderRadius: '6px',
+      boxShadow: '0px 2px 2px rgba(0,0,0,0.8)',
+      filter: "grayscale(50%) "
    },
-   introh5: {
-      textAlign: "center",
-      width: "100%",
-   },
+   
+   
    small: {
-      color: "white",
+      color: "#c9c9c9",
+      fontSize: '1rem'
    },
-   small2: {
-      textAlign: "center",
-      width: "100%",
-      padding: "0px 40px 0 40px",
-   },
-   introBox2: {
-      width: "100%",
-      marginBottom: "50px",
-   },
+   
+   
 
    // class Helper
    heightHelper: {
       height: "50px",
    },
-   mainBoxContent: {
-      padding: "0px 40px 0 40px",
-   },
+  
    spanWhite: {
-      color: "white",
+      color: "rgba(0, 0, 0, 0.501)",
+      fontSize: '1.6rem'
    },
    alittleMore: {
       height: "100%",
@@ -292,6 +290,42 @@ const useStyles = makeStyles((theme) => ({
          color: "white",
       },
    },
+   IntroSectionOne: {
+      width: "40%",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+   },
+   IntroSectionTwo: {
+      width: "60%",
+      height: '375px',
+      paddingRight: '3rem'
+     
+   },
+   IntroSectionTwoInner: {
+      height: '100%',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'space-around'
+   },
+   IntroSectionTwoInnerBoxOne: {
+      fontFamily: "GFS Didot,serif",
+      height: '30%'
+   },
+   IntroSectionTwoInnerBoxTwo: {
+      fontSize: '1.3rem',
+      textAlign: 'justify',
+      height: '70%'
+   },
+   letTalk: {
+      marginLeft: '0.5rem'
+   },
+   BoxTwoContent: {
+      lineHeight: '1.6rem',
+   }
+
 }));
 
 function AboutPage() {
@@ -713,17 +747,10 @@ function AboutPage() {
             className={classes.quoteContainer}>
             <Grid
                item
-               style={{
-                  width: betweenSm_Md ? "100%" : "",
-               }}
                className={classes.quoteItem}>
                <Box className={classes.quoteBox}>
                   <Typography
                      className={classes.quoteText}
-                     style={{
-                        width: betweenSm_Md ? "500px" : null,
-                        margin: betweenSm_Md ? "0 auto" : "",
-                     }}
                      variant={matchesXS ? "h6" : "h5"}>
                      &ldquo; When something is important enough, you do it, even
                      if the odds are not in your favor. &rdquo;{" "}
@@ -734,60 +761,53 @@ function AboutPage() {
                </Box>
             </Grid>
          </Grid>
-
          {matchesSM ? "" : <div className={classes.heightHelper}></div>}
 
          {/* Intro */}
          <Grid
             container
-            justify="space-evenly"
+            className={classes.IntroContainer}
+            
             alignItems="center"
-            className={classes.mainIntroContainer}>
-            <Grid md={4} item className={classes.itemIntro}>
+            direction={matchesSM ? 'column' : 'row'}
+            
+            >
                {/* animated image */}
-                  <Grid
-                  data-aos='fade-up-right'
-               style={{ height: "100%", width: "100%" }}
+            <Grid
+               className={classes.IntroSectionOne}
                item
-               container
-               alignItems="center"
-               justify="center">
-               <Grid style={{ height: "100%", width: "100%" }}>
-                  <Box className={classes.boxIntro}></Box>
-               </Grid>
-            </Grid>
+               data-aos='fade-up-right'
+                 >
+                     <div className={classes.boxIntro}>
+                     <img className={classes.BoxIntroImage} src={IntroImage} alt=""/>
+                     </div>
             </Grid>
             {/* first animated section */}
             <Grid
                item
-               style={{
-                  marginTop: matchesSM ? "5em" : null,
-               }}
-               md>
-               <div data-aos='fade-right'>
-               <Box className={classes.introBox2}>
-                  <Typography
-                     className={classes.introh3}
-                     variant={matchesXS ? "h4" : "h3"}>
-                     Hello!{" "}
+               className={classes.IntroSectionTwo}
+               >
+               <div className={classes.IntroSectionTwoInner} >
+                  <div
+                  
+                     className={classes.IntroSectionTwoInnerBoxOne}>
                      <Typography
-                        component="span"
-                        variant="h5"
-                        sx={{ color: theme.palette.common.white }}
-                        className={classes.introh5}>
-                        My name is Julio.
-                     </Typography>
-                  </Typography>
-
-                  <Typography className={classes.small2}>
-                     I am a UX Engineer that aims to work with small
-                     businesses to bring a successful asset and a team player.
-                  </Typography>
-               </Box>
-               <Box className={classes.mainBoxContent}>
-                  <Typography className={classes.mainBoxContentText}>
-                     I am a React Developer with a focus on the{" "}
-                     <span className={classes.spanWhite}>UX Engineer</span>. But,
+                    
+               variant={matchesXS ? "h4" : "h3"}>
+               Hello!
+                        <Typography
+                           className={classes.letTalk}
+                  component="span"
+                  variant="h5"
+               > 
+                   Let's Talk...
+               </Typography>
+            </Typography>
+                  </div>
+   
+               <div className={classes.IntroSectionTwoInnerBoxTwo}>
+                  <p className={classes.BoxTwoContent}>
+                     I am a <span className={classes.spanWhite}> UI React Developer</span>. But,
                      still exploring other technologies that spike my interest.
                      I work on builds and maintenance for a variety of client
                      requests. Attentive to UI/UX details and high quality and
@@ -796,11 +816,14 @@ function AboutPage() {
                      technologies related to them. Open to evolving in Java,
                      Python, and many more. if you're looking for a developer to
                      add to your team, I'd love to hear from you!
-                  </Typography>
-               </Box>
+                  </p>
+               </div>
                </div>
             </Grid>  
+
          </Grid>
+
+
 
          <Box
             component="div"

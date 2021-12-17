@@ -24,7 +24,14 @@ export default createTheme({
         }
     },
     typography: {
-        fontFamily: "GFS Didot, serif !important",
+        h3: {
+            fontFamily: "GFS Didot,serif !important"
+            
+        },
+        fontFamily: [
+            "GFS Didot",
+            'serif'
+        ].join(","),
         fontSize: '0.95em',
         button: {
             fontFamily: "GFS Didot, serif",
@@ -33,13 +40,17 @@ export default createTheme({
             letterSpacing: '2px',
             fontSize: "15px",
            
-        }
+        },
+        
+
+        
     },
     overrides: {
         MuiInputLabel: {
             root: {
                 color: 'white',
                 fontSize: '1rem',
+               
 
             }
         },
