@@ -38,33 +38,34 @@ import WorkHistoryComponent from "../../components/custom_components/Work_Histor
 
 
 
+
 const useStyles = makeStyles((theme) => ({
    mainAboutContainer: {
-    
+      padding: ' 0 6rem',
       color: '#c9c9c9',
       height: "100%",
       width: "100%",
    },
    quoteContainer: {
-      width: "100%",
+
       height: "25rem",
       [theme.breakpoints.down("xs")]: {
-        
+        width:'100%'
       },
    },
    IntroContainer: {
       heigth: '28.125rem',
-      marginTop: '5rem'
+      marginTop: '5rem',
+     
    },
    quoteItem: {
       backgroundColor: 'rgba(0, 0, 0, 0.501)',
       boxShadow: '0px 2px 2px rgba(0,0,0,0.8)',
       borderRadius: '6px',
-      width: '70%',
+      width: '100%',
       height: '15rem',
-      [theme.breakpoints.down("xs")]: {
-         width: "100%"
-
+      [theme.breakpoints.down("sm")]: {
+        
       },
    },
    quoteBox: {
@@ -73,8 +74,8 @@ const useStyles = makeStyles((theme) => ({
       height: "100%",
       width: "100%",
       padding: '2rem',
-      [theme.breakpoints.down("md")]: {
-        
+      [theme.breakpoints.down("sm")]: {
+         padding: '1rem'
       },
       [theme.breakpoints.down("xs")]: {
        
@@ -122,14 +123,6 @@ const useStyles = makeStyles((theme) => ({
       color: "#c9c9c9",
       fontSize: '1rem'
    },
-   
-   
-
-   // class Helper
-   heightHelper: {
-      height: "50px",
-   },
-  
    spanWhite: {
       color: "rgba(0, 0, 0, 0.501)",
       fontSize: '1.6rem'
@@ -187,6 +180,8 @@ const useStyles = makeStyles((theme) => ({
    },
    workContainer: {
       height: "100%",
+      marginLeft: '0.5rem'
+
    },
    schoolHeader: {
       width: "100%",
@@ -194,9 +189,9 @@ const useStyles = makeStyles((theme) => ({
       padding: " 30px",
    },
    workHeader: {
-      width: "100%",
-      textAlign: "center",
-      padding: " 30px",
+      fontSize: '1.55rem',
+      width: '100%',
+      fontWeigth: 'bold',
    },
 
    workCard: {
@@ -234,10 +229,12 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "space-evenly",
       filter: "grayscale(100%)",
       border: "3px solid white",
-      borderRadius: "5px",
+      boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
+      borderRadius: "6px",
    },
    resumeBtn: {
       color: "white",
+      borderRadius: '50px',
       border: "1px solid",
       transition: "all  1s",
       "&:hover": {
@@ -255,16 +252,18 @@ const useStyles = makeStyles((theme) => ({
    },
    variableBtn: {
       width: "300px",
+      fontSize: '17px',
+      boxShadow: "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
+      fontFamily: 'inherit',
+      backgroundColor: 'black',
+      border: 'none',
+      borderRadius: '19px',
       height: "300px",
-      transition: "transform 3s",
-      transform: "scale(1)",
       "&:hover": {
-         background: "inherit",
-         transform: "scale(0.95)",
+      
       },
       "&:focus": {
-         outline: "none",
-         border: "none",
+     
       },
    },
    variableBox: {
@@ -299,7 +298,7 @@ const useStyles = makeStyles((theme) => ({
    IntroSectionTwo: {
       width: "60%",
       height: '375px',
-      paddingRight: '3rem'
+      padding: '2.2rem'
      
    },
    IntroSectionTwoInner: {
@@ -324,6 +323,31 @@ const useStyles = makeStyles((theme) => ({
    },
    BoxTwoContent: {
       lineHeight: '1.6rem',
+   },
+   IntroHeader: {
+      width: '100%'
+   },
+   IntroHeader_h3: {
+      fontFamily: 'inherit',
+      margin: ' 4rem 0',
+      borderBottom: '2px solid white',
+      width: '20%'
+   },
+   sectionHeader: {
+      backgroundColor: 'rgba(0,0,0,0.7)',
+      boxShadow: '5px 5px 20px rgba(0, 0, 0, 0.5)',
+      textTransform: 'uppercase',
+      width: '100%',
+      height: '100px',
+      fontFamily: 'inherit',
+      borderRadius: '3px',
+      padding: '1rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-start'
+   },
+   sectionHeaderInnerContainer: {
+      width: '30%'
    }
 
 }));
@@ -347,7 +371,7 @@ function AboutPage() {
       setOpen2(!open2);
    };
    const variableButton = (
-      <Box data-aos='fade-left' className={classes.variableBox}>
+      <Box className={classes.variableBox}>
          <Button
             className={classes.variableBtn}
             color="inherit"
@@ -735,44 +759,56 @@ function AboutPage() {
       });
     })
    return (
-      <Grid container direction="column" className={classes.mainAboutContainer}>
+      <>
          <NavBar />
-
+      
+         <Grid
+            style={{
+               padding: matchesSM ? 0: null,
+               
+            }}
+            container direction="column" className={classes.mainAboutContainer}>
          {/* steve job quote*/}
-
+         <section>  
          <Grid
-            container
-            alignItems="center"
-            justify="center"
-            className={classes.quoteContainer}>
+         container
+         alignItems="center"
+         justify="center"
+         className={classes.quoteContainer}>   
+            <Box className={classes.quoteBox}>
+               <h5 className={classes.quoteText}
+                 >
+                  &ldquo; When something is important enough, you do it, even
+                  if the odds are not in your favor. &rdquo;{" "}
+                  <header-quote>
+                     <small className={classes.small}>-Elon Musk-</small>
+                  </header-quote>
+               </h5>
+            </Box>
+      
+      </Grid>
+        </section>
+        {matchesSM ? "" : <div className={classes.heightHelper}></div>}
+
+            {/* Intro */}
+            <section className={classes.sectionHeader}>
+            <div className={classes.sectionHeaderInnerContainer}>
+            <h3 className={classes.workHeader}>
+                     A Little About Me...
+                  </h3>
+                  </div>
+            </section>
+            <main>
+            <section>
             <Grid
-               item
-               className={classes.quoteItem}>
-               <Box className={classes.quoteBox}>
-                  <Typography
-                     className={classes.quoteText}
-                     variant={matchesXS ? "h6" : "h5"}>
-                     &ldquo; When something is important enough, you do it, even
-                     if the odds are not in your favor. &rdquo;{" "}
-                     <header-quote>
-                        <small className={classes.small}>-Elon Musk-</small>
-                     </header-quote>
-                  </Typography>
-               </Box>
-            </Grid>
-         </Grid>
-         {matchesSM ? "" : <div className={classes.heightHelper}></div>}
-
-         {/* Intro */}
-         <Grid
             container
             className={classes.IntroContainer}
-            
             alignItems="center"
             direction={matchesSM ? 'column' : 'row'}
             
             >
                {/* animated image */}
+              
             <Grid
                className={classes.IntroSectionOne}
                item
@@ -791,20 +827,14 @@ function AboutPage() {
                   <div
                   
                      className={classes.IntroSectionTwoInnerBoxOne}>
-                     <Typography
-                    
-               variant={matchesXS ? "h4" : "h3"}>
-               Hello!
-                        <Typography
-                           className={classes.letTalk}
-                  component="span"
-                  variant="h5"
-               > 
+                     <h3>
+                        Hello!
+                        <span
+                           className={classes.letTalk} > 
                    Let's Talk...
-               </Typography>
-            </Typography>
+               </span>
+            </h3>
                   </div>
-   
                <div className={classes.IntroSectionTwoInnerBoxTwo}>
                   <p className={classes.BoxTwoContent}>
                      I am a <span className={classes.spanWhite}> UI React Developer</span>. But,
@@ -820,18 +850,9 @@ function AboutPage() {
                </div>
                </div>
             </Grid>  
-
          </Grid>
+            </section>
 
-
-
-         <Box
-            component="div"
-            sx={{
-               height: matchesXS ? "100px" : "230px",
-            }}></Box>
-
-         <Divider sx={{ width: "30%", margin: "0 auto" }} variant="middle" />
          {/* A little more About me  */}
          <Box
             component="div"
@@ -839,55 +860,45 @@ function AboutPage() {
                height: matchesXS ? "100px" : "150px",
             }}></Box>
          {!More ? variableButton : littleMore1}
-         <div className={classes.heightHelper}></div>
-         <div className={classes.heightHelper}></div>
-
-         <Divider sx={{ width: "30%", margin: "0 auto" }} variant="middle" />
-
-         {/* Where I worked */}
-         <Box component="div" sx={{ height: "70px" }}></Box>
-         <Typography
-            className={classes.workHeader}
-            variant={matchesXS ? "h4" : "h3"}>
-            Where I'v Worked
-         </Typography>
-
-         {matchesXS ? null : (
-            <Box component="div" sx={{ height: "50px" }}></Box>
-         )}
-         <div className={classes.heightHelper}></div>
-         <Grid
-            container
-            direction={matchesSM ? "column" : "flex"}
-            lg={12}
-          
-            alignItems="center"
-            justify="center"
-            className={classes.workContainer}>
-            <WorkHistoryComponent WorkName="UpWork" />
-            <WorkHistoryComponent WorkName="CCS Supply Store" />
-            <WorkHistoryComponent WorkName="Orlando Spencer LLC" />
-            <WorkHistoryComponent WorkName="Halen" />
-         </Grid>
-         <div className={classes.heightHelper}></div>
-         {matchesXS ? null : (
-            <React.Fragment>
-               <div className={classes.heightHelper}></div>
-
-               <div className={classes.heightHelper}></div>
-               <div className={classes.heightHelper}></div>
-            </React.Fragment>
-         )}
-
-         {/* resume section*/}
-         <Divider sx={{ width: "30%", margin: "0 auto" }} variant="middle" />
-         <Grid
+            {/* Where I worked */}
+            <section className={classes.sectionHeader}>
+            <div className={classes.sectionHeaderInnerContainer}>
+            <h3 className={classes.workHeader}>
+            Where I'v Worked...
+                  </h3>
+                  </div>
+            </section>
+        <section>
+        <Grid
+        container
+        direction={matchesSM ? "column" : "flex"}
+        lg={12}
+        alignItems="center"
+        justify="center"
+        className={classes.workContainer}>
+        <WorkHistoryComponent WorkName="UpWork" />
+        <WorkHistoryComponent WorkName="CCS Supply Store" />
+        <WorkHistoryComponent WorkName="Orlando Spencer LLC" />
+        <WorkHistoryComponent WorkName="Halen" />
+     </Grid>
+               </section>
+               </main>
+            {/* resume section*/}
+            <section className={classes.sectionHeader}>
+               <div className={classes.sectionHeaderInnerContainer}>
+               <h3 className={classes.workHeader}>
+               Check out my resume...
+            </h3>
+               </div>
+         
+            </section>
+            <section>
+            <Grid
             container
             alignItems="center"
             justify="center"
             className={classes.resumeContainer}
             direction="column">
-
             <Grid
                item
                style={{
@@ -899,14 +910,13 @@ function AboutPage() {
                   data-aos='flip-left'
                   data-aos-easing='ease-out-cubic'
                   data-aos-duration='2000'>
-               <Typography sx={{ color: "white" }} variant="h5">
+               <h5>
                   Learn More About Me...
-               </Typography>
-               <Typography sx={{ color: "white" }}>Check Out My CV</Typography>
+               </h5>
+               <h6 >Check Out My CV</h6>
                <Button
                   className={classes.resumeBtn}
-                  size="small"
-                  sx={{ color: "white" }}
+                  size="md"
                   disableFocusRipple={true}
                   startIcon={
                      <GetAppIcon
@@ -923,8 +933,10 @@ function AboutPage() {
                </Box>
             </Grid>
          </Grid>
-         <MainFooter />
+            </section>
       </Grid>
+      <MainFooter />
+      </>
    );
 }
 

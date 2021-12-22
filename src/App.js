@@ -30,7 +30,7 @@ function App(){
   const [isloading, setIsLoading] = useState(true);
 
   useEffect(() => {
-  setTimeout( ()=> setIsLoading(false),5000 )
+  setTimeout( ()=> setIsLoading(false),3000 )
 },[])
   
   

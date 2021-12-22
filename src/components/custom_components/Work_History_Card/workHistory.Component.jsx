@@ -12,15 +12,17 @@ import Box from '@material-ui/core/Box';
 
 
 
+
 const useStyles = makeStyles((theme) => ({
    workItem: {
-      margin: "5px",
-      display: "flex",
+      display: 'flex',
+      margin: '0.625rem',
+      boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
       alignItems: "center",
       justifyContent: "center",
+      padding: '1rem',
       height: "300px",
-      width: "300px",
-      border: "2px solid",
+      width: "350px",
       borderRadius: "6px",
    },
 }));
@@ -34,13 +36,12 @@ export default function WorkHistoryComponent(props) {
    return (
       <Grid
          item
-         sm={4}
-         md={3}
-         lg={2}
+        
+
          style={{
             marginBottom: matchesSM ? "5em" : matchesXS ? "2em" : "",
             border: matchesSM ? "none" : null,
-            width: matchesSM ? "100%" : "300px",
+            width: matchesSM ? "90%" : "300px",
             height: matchesXS ? "35px" : "300px",
          }}
          className={classes.workItem}>

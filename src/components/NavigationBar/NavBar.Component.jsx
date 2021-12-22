@@ -76,8 +76,11 @@ const useStyles = makeStyles((theme) => ({
    returnButton: {
       color: "white",
       position: "relative",
-      background: "none",
-      boxShadow: "none",
+      fontWeigth: 'bold',
+      fontFamily: 'inherit',
+      borderRadius: '3.125rem',
+      backgroundColor: 'gray',
+      padding: '0.5rem',
       zIndex: "2",
       "&::before": {
          content: '""',
@@ -85,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
          position: "absolute",
          width: "7.3125rem",
          height: "0.0625rem",
-         bottom: "1.5rem",
+         bottom: "1.6rem",
          left: "3rem",
          backgroundColor: "#fff",
          visibility: "hidden",
@@ -98,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
       },
       "&:active": {
          background: "none",
-         boxShadow: "none",
+         boxShadow: '2px 1px 3px 1px rgba(0,0,0,0.1)',
       },
       "&:focus": {
          outline: "none",
@@ -106,6 +109,7 @@ const useStyles = makeStyles((theme) => ({
       },
       "&:hover": {
          color: theme.palette.common.white,
+         backgroundColor: "rgb(63, 59, 59)"
       },
    },
    toolbarMargin: {
@@ -285,6 +289,9 @@ function NavBar(props) {
                         </NavbarCustomButton>
                      <NavbarCustomButton id='linethrough2' toPath="/projects">
                     project
+                     </NavbarCustomButton>
+                     <NavbarCustomButton id='linethrough'  toPath="/explore">
+                     explore
                   </NavbarCustomButton>
                      <TransitionsModal/>
                   </Grid>
