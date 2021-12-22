@@ -248,23 +248,24 @@ function HomePage() {
                secondaryXsNav
             ) : (
                <React.Fragment>
-                  <Grid item >
+                     <Grid item >
                      <CustomButton
-                        toPath="/explore">
-                        EXPLORE
-                     </CustomButton>
+                     toPath="/about">
+                     ABOUT Me
+                  </CustomButton>
                   </Grid>
                   <Grid item>
                      <CustomButton
                         toPath="/projects">
                         PROJECTS
+                        </CustomButton>
+                        <CustomButton
+                        toPath="/explore">
+                        EXPLORE
                      </CustomButton>
                   </Grid>
                   <Grid item>
-                     <CustomButton
-                        toPath="/about">
-                        ABOUT Me
-                     </CustomButton>
+                  
                   </Grid>
                </React.Fragment>
             )}
