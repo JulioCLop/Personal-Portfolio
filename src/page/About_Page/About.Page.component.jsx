@@ -223,7 +223,6 @@ const useStyles = makeStyles((theme) => ({
       alignItems: "center",
       justifyContent: "space-evenly",
       filter: "grayscale(100%)",
-      border: "3px solid white",
       boxShadow: "rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px",
       borderRadius: "6px",
    },
