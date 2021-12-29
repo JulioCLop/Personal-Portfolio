@@ -34,6 +34,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import NavBar from "../../components/NavigationBar/NavBar.Component";
 import MainFooter from "../../components/Footer/Main.Footer.Component";
 import WorkHistoryComponent from "../../components/custom_components/Work_History_Card/workHistory.Component";
+import AboutPageCustomSection from "../../components/about_page_custom_components/about_page_custom_section";
+import AboutSectionHeaders from "../../components/about_page_custom_components/about_section_headers";
 
 
 
@@ -55,7 +57,6 @@ const useStyles = makeStyles((theme) => ({
    },
    IntroContainer: {
       heigth: '28.125rem',
-      marginTop: '5rem',
      
    },
    quoteItem: {
@@ -188,12 +189,6 @@ const useStyles = makeStyles((theme) => ({
       textAlign: "center",
       padding: " 30px",
    },
-   workHeader: {
-      fontSize: '1.55rem',
-      width: '100%',
-      fontWeigth: 'bold',
-   },
-
    workCard: {
       background: "rgba(46, 49, 49, 0.4)",
    },
@@ -213,7 +208,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
    },
    resumeContainer: {
-      height: "900px",
+      height: "100%",
       width: "100%",
    },
    resumeItem: {
@@ -333,27 +328,12 @@ const useStyles = makeStyles((theme) => ({
       borderBottom: '2px solid white',
       width: '20%'
    },
-   sectionHeader: {
-      backgroundColor: 'rgba(0,0,0,0.7)',
-      boxShadow: '5px 5px 20px rgba(0, 0, 0, 0.5)',
-      textTransform: 'uppercase',
-      width: '100%',
-      height: '100px',
-      fontFamily: 'inherit',
-      borderRadius: '3px',
-      padding: '1rem',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-start'
-   },
-   sectionHeaderInnerContainer: {
-      width: '30%'
-   }
+  
+  
 
 }));
 
 function AboutPage() {
-
    const classes = useStyles();
    const [open1, setOpen1] = React.useState(true);
    const [open2, setOpen2] = React.useState(true);
@@ -361,7 +341,6 @@ function AboutPage() {
    const betweenSm_Md = useMediaQuery(theme.breakpoints.down("md"));
    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
-
    const [More, setMore] = useState();
    const handleClick = () => {
       setOpen1(!open1);
@@ -759,17 +738,10 @@ function AboutPage() {
       });
     })
    return (
-      <>
+      <React.Fragment>
          <NavBar />
-      
-         <Grid
-            style={{
-               padding: matchesSM ? 0: null,
-               
-            }}
-            container direction="column" className={classes.mainAboutContainer}>
          {/* steve job quote*/}
-         <section>  
+         <AboutPageCustomSection>  
          <Grid
          container
          alignItems="center"
@@ -787,19 +759,14 @@ function AboutPage() {
             </Box>
       
       </Grid>
-        </section>
-        {matchesSM ? "" : <div className={classes.heightHelper}></div>}
-
+        </AboutPageCustomSection>
             {/* Intro */}
-            <section className={classes.sectionHeader}>
-            <div className={classes.sectionHeaderInnerContainer}>
-            <h3 className={classes.workHeader}>
-                     A Little About Me...
-                  </h3>
-                  </div>
-            </section>
-            <main>
-            <section>
+            <AboutSectionHeaders>
+            A Little About Me...
+
+            </AboutSectionHeaders>
+           
+            <AboutPageCustomSection>
             <Grid
             container
             className={classes.IntroContainer}
@@ -851,24 +818,17 @@ function AboutPage() {
                </div>
             </Grid>  
          </Grid>
-            </section>
-
-         {/* A little more About me  */}
-         <Box
-            component="div"
-            sx={{
-               height: matchesXS ? "100px" : "150px",
-            }}></Box>
-         {!More ? variableButton : littleMore1}
+            </AboutPageCustomSection>
+            {/*a little more about me*/}
+            <AboutPageCustomSection>
+            {!More ? variableButton : littleMore1}
+            </AboutPageCustomSection>
+         
             {/* Where I worked */}
-            <section className={classes.sectionHeader}>
-            <div className={classes.sectionHeaderInnerContainer}>
-            <h3 className={classes.workHeader}>
+            <AboutSectionHeaders>
             Where I'v Worked...
-                  </h3>
-                  </div>
-            </section>
-        <section>
+            </AboutSectionHeaders>
+        <AboutPageCustomSection>
         <Grid
         container
         direction={matchesSM ? "column" : "flex"}
@@ -881,18 +841,12 @@ function AboutPage() {
         <WorkHistoryComponent WorkName="Orlando Spencer LLC" />
         <WorkHistoryComponent WorkName="Halen" />
      </Grid>
-               </section>
-               </main>
+               </AboutPageCustomSection>
             {/* resume section*/}
-            <section className={classes.sectionHeader}>
-               <div className={classes.sectionHeaderInnerContainer}>
-               <h3 className={classes.workHeader}>
-               Check out my resume...
-            </h3>
-               </div>
-         
-            </section>
-            <section>
+            <AboutSectionHeaders>
+            Check out my resume...
+            </AboutSectionHeaders>
+            <AboutPageCustomSection>
             <Grid
             container
             alignItems="center"
@@ -933,10 +887,9 @@ function AboutPage() {
                </Box>
             </Grid>
          </Grid>
-            </section>
-      </Grid>
+            </AboutPageCustomSection>
       <MainFooter />
-      </>
+      </React.Fragment>
    );
 }
 
