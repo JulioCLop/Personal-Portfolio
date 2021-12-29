@@ -212,6 +212,7 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
    },
    resumeItem: {
+      color: 'white',
       width: "400px",
       height: "300px",
       backgroundImage: `url(${resumeImage})`,
