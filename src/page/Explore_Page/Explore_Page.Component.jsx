@@ -2,7 +2,8 @@ import React from "react";
 
 // Component Imports
 import NavBar from "../../components/NavigationBar/NavBar.Component";
-import Footer from '../../components/Footer/Main.Footer.Component'
+import Footer from '../../components/Footer/Main.Footer.Component';
+import SectionHeader from '../../components/custom_components/Header/Section.Header.component';
 
 
 // Material UI
@@ -10,7 +11,7 @@ import { useTheme, makeStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
+
 
 
 
@@ -55,14 +56,9 @@ const useStyles = makeStyles((theme) => ({
       margin: '0',
      
    },
-   mainExploreHeader: {
-      margin: '1.5625rem 0',
-      textAlign:'center'
-
-   },
    mainContainerContent: {
       color: 'white',
-      marginBottom: "5rem"
+      padding: ' 0 6rem 6rem 6rem'
    }
 }));
 
@@ -80,6 +76,7 @@ export default function ExplorePageComponent() {
             alignItems="center"
             justify="center"
          className={classes.mainContainerContent}>
+         
             <Grid
             container
                style={{
@@ -87,9 +84,8 @@ export default function ExplorePageComponent() {
             }}
                alignItems='center'
                justifyContent='center'>
-            <Grid item>
-               <Typography className={classes.mainExploreHeader} variant='h3'> Explore These Great Article</Typography>
-            </Grid>
+                 <SectionHeader>Explore These Great Article</SectionHeader>
+           
          </Grid>
             <Grid
                item

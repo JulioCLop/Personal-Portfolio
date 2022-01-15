@@ -3,16 +3,21 @@ import React from 'react';
 // React Router
 import { Link } from "react-router-dom";
 
+
+
+
 //  Material UI
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+
+// Import Styles
+import './Button.component.css';
 
 
 
 
 
 const useStyles = makeStyles((theme) => ({
-
    customButton: {
         color: 'black',
         letterSpacing: '2px',
@@ -60,15 +65,24 @@ const useStyles = makeStyles((theme) => ({
 
 
 const CustomButton = (props) => {
-    const classes = useStyles();
+   const classes = useStyles();
+   const { toPath } = props;
+  
+ 
+   
+     
+      
+   
+   
 
-    const { toPath } = props;
-   
-   
+  
+
     return (
         <>
-            <Button 
+            <Button
              className={classes.customButton}
+             onMouseEnter={ props.onMouseEnter} 
+             onMouseLeave={props.onMouseLeave}
              disableTouchRipple={true}
              component={Link}
              to={toPath}

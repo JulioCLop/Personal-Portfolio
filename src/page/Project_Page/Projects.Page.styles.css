@@ -1,0 +1,185 @@
+.MainProjectContainer{
+ margin-top: 6rem;
+ color: #626364;
+ padding: 0 6rem;
+
+}
+.MainContainerSection{
+   padding: 2rem 0;
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   grid-gap: 1rem;
+   grid-template-rows: auto;
+   align-items: center;
+   justify-content: center;
+   
+   
+}
+.JourneySection1{
+    height: 30rem;
+}
+.JourneySection1 div{
+    height: 100%;
+   padding: 2rem;
+   text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.JourneySection1 div h3{
+    font-size: 2.2rem;
+}
+.JourneySection1 div h5{
+    margin-top: 0.5rem;
+}
+.JourneySection1 div a{
+    margin-top: 0.5rem;
+    padding: 0.7rem 2rem;
+    background-color: transparent;
+    border: 2px solid #626364;
+    border-radius: 8px;
+    color: #626364;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.JourneySection1 div a:hover{
+    color: white;
+    background-color: #2a2b2c;
+}
+.JourneySection2{
+    height: 30rem;
+    
+}
+.JourneySection2 div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.JourneySection2 div img{
+    width: 100%;
+    height: 25rem;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; ;
+
+}
+
+.InputBox{
+    width: 80%;
+    margin: 0 4.5rem 3rem 4.5rem;
+}
+.InputBox:focus{
+    border: none;
+    color: white;
+}
+
+
+/* Most Recent Work Section */
+
+.Most-Recent{
+    height: 31.25rem;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+.Most-Recent-Inner{
+    display: flex;
+    width: 80%;
+    height: 90%;
+   
+}
+
+.Most-Recent-Containers{
+    width: 50%;
+    height: 18rem;
+    margin: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.Most-Recent-Containers img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+   box-shadow:rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px; 
+  filter: grayscale(60%);
+
+}
+.Most-Recent-Containers h2{
+    margin-top: 0.5rem;
+    font-weight: bold;
+    padding: 0.25rem;
+}
+
+
+.Most-Recent-Containers div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Most-Recent-Containers a{
+    color: inherit;
+    font-family: inherit;
+    margin: 0.55rem;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 23px;
+    background-color: #2a2b2c;
+    box-shadow: 2px 1px 3px 1px rgb(0 0 0 / 50%);
+}
+
+.Most-Recent-Containers a:hover{
+    box-shadow:1px 1px 1px 1px rgb(0 0 0 / 50%);
+    color: #bdbfc0;
+}
+
+
+@media(max-width:48rem){
+    .MainProjectContainer{
+        padding: 0;
+    }
+    .MainContainerSection{
+        grid-template-columns: repeat(1, 1fr);  
+    }
+    .JourneySection1 div h3{
+        font-size: 1.85rem;
+    }
+    .JourneySection1 div h5{
+        font-size: 17px;
+        margin-top: 0.5rem;
+    }
+    .JourneySection1  div{
+    }
+    .JourneySection2{  
+        display: none;
+    }
+}
+@media only screen and(min-width:600px){
+    .MainContainerSection{
+        
+    }
+}
+@media only screen and(min-width:768px){
+    .MainContainerSection{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media only screen and(min-width:992px){
+    .MainContainerSection{
+      
+       
+    }
+}
+@media only screen and(min-width:1200){
+    
+}

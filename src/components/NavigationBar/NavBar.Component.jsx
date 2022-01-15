@@ -398,6 +398,7 @@ function NavBar(props) {
             </Toolbar>
          </AppBar>
          <div className={classes.toolbarMargin} />
+
       </React.Fragment>
    );
 }

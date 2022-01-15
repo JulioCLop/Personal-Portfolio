@@ -1,13 +1,11 @@
 import React from "react";
 
 // Assets
-import tower from "../../assets/yash.jpg";
 import newLogo from "../../assets/newLogoNoBackround.png";
 
 // Material UI Imports
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
@@ -15,17 +13,22 @@ import Typography from "@material-ui/core/Typography";
 // Component Imports
 import CustomButton from "../../components/custom_components/Button/Homepage_Button/button.component";
 
+// Import Styles
+import './Home_Page.styles.css';
+import PanelComponent from "../../components/custom_components/Button/Homepage_Button/panel.component";
 
 const useStyles = makeStyles((theme) => ({
    ...theme.palette.common.typography,
+   
    MainHeaderSection: {
-      marginTop: '30px',
       height: "200px",
    },
    mainContainer: {
       backgroundColor: "rgba(0,0,0,0.1)",
       color: "#fff",
       height: "100vh",
+      alignItems: 'center',
+      justifyContent: 'center',
       width: "100%",
       overflow: "hidden",
       
@@ -88,8 +91,9 @@ const useStyles = makeStyles((theme) => ({
 
    mainHeaderText: {
       letterSpacing: "1.5px",
+      fontSize: '1.5rem',
       margin: '5px 0',
-      fontWeigth: '300px',
+      fontWeigth: '700px',
       fontFamily: 'inherit',
       width: "400px",
       textTransform: "uppercase",
@@ -165,17 +169,15 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
    },
    mainHomePageImage: {
-      backgroundImage: `url(${tower})`,
+      backgroundImage: `url('https://images.unsplash.com/photo-1508645255802-d7de28c18481?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')`,
       backgroundPosition: "center",
       backgroundSize: "contain",
       backgroundRepeat: "no-repeat",
-      objectFit: 'cover',
       zIndex: "-4",
       height: "100%",
       width: "100%",
       position: "absolute",
-      margin: "0 auto",
-      filter: "grayscale(80%) opacity(6%)",
+      filter: "grayscale(40%) opacity(70%)",
    },
 
    
@@ -186,14 +188,16 @@ function HomePage() {
    const classes = useStyles();
    const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+   
 
-  
+   
+
+   
 
    const secondaryXsNav = (
       <React.Fragment>
          <Grid item>
-            <CustomButton
+            <CustomButton 
                toPath="/explore">
                EXPLORE
             </CustomButton>
@@ -214,19 +218,17 @@ function HomePage() {
    );
 
    return (
-      <Grid container className={classes.mainContainer}>
+      <Grid  id='main-home-container' container className={classes.mainContainer}>
+
          {/* 1st container includes main header and contact button*/}
          <Grid
-            sx={{ height: "50%" }}
+            sx={{ height: "50%"}}
             container
-            justifyContent={matchesMD ? 'center' : ''}
-            alignItems={matchesMD ? 'center' : ''}
+            justifyContent= 'center' 
             className={classes.MainHeaderSection}>
-            <Grid
-               item
-               
+            <div
                className={classes.MainHeaderSectionItems1}>
-               <Box className={classes.MainHeaderSectionBox1}>
+               <div className={classes.MainHeaderSectionBox1}>
                   <div className={classes.logo}></div>
                   <Typography variant="h6" className={classes.mainHeaderText}>
                      Julio Lopez
@@ -234,9 +236,11 @@ function HomePage() {
                   <Typography variant="h5" className={classes.mainHeaderText}>
                      React Developer
                   </Typography>
-               </Box>
-            </Grid>
+               </div>
+            </div>
+          
          </Grid>
+         
          {/* 2nd container for single button*/}
          <Grid
             sx={{ height: "70%" }}
@@ -247,27 +251,7 @@ function HomePage() {
             {matchesXS ? (
                secondaryXsNav
             ) : (
-               <React.Fragment>
-                     <Grid item >
-                     <CustomButton
-                     toPath="/about">
-                     ABOUT Me
-                  </CustomButton>
-                  </Grid>
-                  <Grid item>
-                     <CustomButton
-                        toPath="/projects">
-                        PROJECTS
-                        </CustomButton>
-                        <CustomButton
-                        toPath="/explore">
-                        EXPLORE
-                     </CustomButton>
-                  </Grid>
-                  <Grid item>
-                  
-                  </Grid>
-               </React.Fragment>
+               <PanelComponent/>
             )}
          </Grid>
         

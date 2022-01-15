@@ -16,6 +16,7 @@ section: {
 
 
 export default function AboutPageCustomSection(props) {
+
     const classes = useStyles();
    
     return (

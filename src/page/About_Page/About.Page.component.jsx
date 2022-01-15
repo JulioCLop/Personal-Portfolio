@@ -34,8 +34,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import NavBar from "../../components/NavigationBar/NavBar.Component";
 import MainFooter from "../../components/Footer/Main.Footer.Component";
 import WorkHistoryComponent from "../../components/custom_components/Work_History_Card/workHistory.Component";
-import AboutPageCustomSection from "../../components/about_page_custom_components/about_page_custom_section";
-import AboutSectionHeaders from "../../components/about_page_custom_components/about_section_headers";
+import AboutPageCustomSection from "../../components/Main_Section/Main_section";
+import AboutSectionHeaders from "../../components/custom_components/Header/Section.Header.component";
 
 
 
@@ -43,7 +43,7 @@ import AboutSectionHeaders from "../../components/about_page_custom_components/a
 
 const useStyles = makeStyles((theme) => ({
    mainAboutContainer: {
-      padding: ' 0 6rem',
+      padding: ' 0 6rem 6rem 6rem',
       color: '#c9c9c9',
       height: "100%",
       width: "100%",
@@ -739,9 +739,16 @@ function AboutPage() {
     })
    return (
       <React.Fragment>
-         <NavBar />
+      <NavBar />
+      <div style={{padding: '0 6rem 6rem 6rem'}}>
+       
+      
          {/* steve job quote*/}
+         <div >
+       
          <AboutPageCustomSection>  
+         <AboutSectionHeaders>
+            A Little About Me..</AboutSectionHeaders>
          <Grid
          container
          alignItems="center"
@@ -761,10 +768,7 @@ function AboutPage() {
       </Grid>
         </AboutPageCustomSection>
             {/* Intro */}
-            <AboutSectionHeaders>
-            A Little About Me...
-
-            </AboutSectionHeaders>
+           
            
             <AboutPageCustomSection>
             <Grid
@@ -888,6 +892,9 @@ function AboutPage() {
             </Grid>
          </Grid>
             </AboutPageCustomSection>
+            </div>
+     
+      </div>
       <MainFooter />
       </React.Fragment>
    );

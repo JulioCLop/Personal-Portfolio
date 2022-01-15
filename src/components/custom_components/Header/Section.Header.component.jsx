@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         color: 'white'
      },
      sectionHeaderInnerContainer: {
-        width: '30%'
+        width: '100%'
      },
      HeaderText:{
         fontSize: '1.55rem',
